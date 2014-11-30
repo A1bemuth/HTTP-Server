@@ -1,0 +1,96 @@
+<html>
+<head>
+<title>Converter</title>
+<meta http-equiv="Content-Type" content="text/html; charset=Windows-1251">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <script src="convert.js" type="text/javascript"></script>
+</head>
+<body bgcolor="#FFFFFF" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+<table id="Table_01" width="1024" height="100%" border="0" cellpadding="0" cellspacing="0">
+	<tr>
+		<td colspan="2" rowspan="2">
+			<img src="images/menu_01.jpg" width="104" height="85" alt=""></td>
+		<td colspan="6">
+			<img src="images/menu_02.jpg" width="900" height="40" alt=""></td>
+		<td rowspan="2">
+			<img src="images/menu_03.jpg" width="20" height="85" alt=""></td>
+	</tr>
+	<tr>
+		<td>
+			<img src="images/menu_04.jpg" width="50" height="45" alt=""></td>
+		<td class="linkCell" background="images/menu_05.jpg" width="102" height="45">
+        <a href="main.html">First</a></td>
+		<td class="linkCell" background="images/menu_05.jpg" width="102" height="45">
+        <a href="converter.html">Second</a></td>
+		<td class="linkCell" background="images/menu_05.jpg" width="102" height="45">
+        <a href="table.html">Third</a></td>
+		<td colspan="2">
+			<img src="images/menu_08.jpg" width="544" height="45" alt=""></td>
+	</tr>
+	<tr>
+		<td width="51" height="15"></td>
+
+		<td colspan="6" id="field">
+          <!--<form>-->
+          <table cellpadding="5" cellspacing="0" border="0" class="text">
+              <tr>
+                  <td>
+                      <p>Число для<br> конвертации</p>
+                  </td>
+                  <td>
+                    <input type="text" id="number" required pattern="^[0-9a-zA-Z]+$" required>
+                  </td>
+                  <td rowspan=4>
+                    <output id="result"></output>
+                  </td>
+              </tr>
+              <tr>
+                  <td>
+                      <p>Система<br> счисления</p>
+                  </td>
+                  <td>
+                      <input type="text" id="base1" required pattern="^[0-9]+$" required>
+                  </td>
+              </tr>
+              <tr>
+                  <td>
+                      <p>Итоговая система<br> счисления</p>
+                  </td>
+                  <td>
+                      <input type="text" id="base2" required pattern="^[0-9]+$" required>
+                  </td>
+              </tr>
+              <tr>
+                  <td colspan="2">
+                      <button width="100%" onclick="makeRequest()">Вычислить ответ</button>
+                  </td>
+              </tr>
+          </table>
+          <!--</form>-->
+	    </td>
+
+		<td width="51" height="15" colspan="2"></td>
+	</tr>
+	<tr>
+		<td>
+			<img src="images/spacer.gif" width="51" height="1" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="53" height="1" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="50" height="1" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="102" height="1" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="102" height="1" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="102" height="1" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="513" height="1" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="31" height="1" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="20" height="1" alt=""></td>
+	</tr>
+</table>
+</body>
+</html>
