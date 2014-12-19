@@ -133,10 +133,6 @@ public class SocketProcessor implements Runnable {
         byte[] buffer = new byte[1024];
 
         InputStream fileInput = SocketProcessor.class.getClassLoader().getResourceAsStream("com/company/webFiles/"+uri);
-        if(fileInput==null) {
-            fileInput = SocketProcessor.class.getClassLoader().getResourceAsStream("com/company/webFiles/main.html");
-            writeResponseHeader(uri,"","404 Not Found");
-        }
 
         if(uri.contains("main.html")){
             writeResponseHeader(uri,"UTF-8","200 OK");
@@ -147,7 +143,14 @@ public class SocketProcessor implements Runnable {
             return;
         }
 
-        writeResponseHeader(uri, "UTF-8", "200 OK");
+        if(fileInput==null) {
+            fileInput = SocketProcessor.class.getClassLoader().getResourceAsStream("com/company/webFiles/main.html");
+            writeResponseHeader("main.html","","404 Not Found");
+        }
+        else{
+            writeResponseHeader(uri, "UTF-8", "200 OK");
+        }
+
         int bytesRead;
         while ((bytesRead = fileInput.read(buffer)) != -1) {
             os.write(buffer, 0, bytesRead);
@@ -173,18 +176,18 @@ public class SocketProcessor implements Runnable {
         String contentType = "text/plain";
 
         if (uri.contains("html"))
-            contentType = "text/html"+encoding;
+            contentType = "text/html" + (encoding.isEmpty() ? "" : (";charset="+encoding));
         else if (uri.contains("css"))
             contentType = "text/css";
         else if (uri.contains("js"))
             contentType = "application/javascript";
         else if (uri.contains("jpg"))
             contentType = "image/jpeg";
-        else writeStringResponse(uri + "200 OK");
-            String response = "HTTP/1.1" + status + "\r\n" +
-                "Content-Type: "+contentType+"\r\n" +
-                "Connection: Keep-Alive \r\n" +
-                "Content-Language: ru\r\n\r\n";
+//        else writeStringResponse(uri + " 200 OK");
+        String response = "HTTP/1.1 " + status + "\r\n" +
+            "Content-Type: "+contentType+"\r\n" +
+            "Connection: Keep-Alive \r\n" +
+            "Content-Language: ru\r\n\r\n";
         os.write(response.getBytes());
         os.flush();
     }
