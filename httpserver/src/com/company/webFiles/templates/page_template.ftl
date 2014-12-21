@@ -28,16 +28,9 @@
 	</tr>
 	<tr>
 		<td width="51" height="15"></td>
-
 		<td colspan="6" id="field">
-          <p style="text-align: center; font-size: large;" class="text">
-                Работу выполняли: Костарев Д.С., Дудин Н.А.<br>
-                Номер группы: РИ-302201<br>
-                Номер индивидуального задания: 5<br>
-                Текст индивидуального задания:<br>
-                «Создание конвертера счислительных систем»<br>
-           </p>
-	    </td>
+			${content}
+		</td>
 
 		<td width="51" height="15" colspan="2"></td>
 	</tr>
