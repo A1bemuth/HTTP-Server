@@ -1,4 +1,5 @@
 import java.io.File;
+import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.ArrayList;
@@ -13,13 +14,19 @@ public class HttpServer {
 
     public static void main(String[] args) throws Throwable{
         ServerSocket ss = new ServerSocket(8080);
-        cfg.setDirectoryForTemplateLoading(new File(HttpServer.class.getResource("com/company/webFiles/templates").getPath()));
-        cfg.setDefaultEncoding("UTF-8");
-        cfg.setTemplateExceptionHandler(TemplateExceptionHandler.DEBUG_HANDLER);
+        configureFreeMarker();
         while (true) {
             Socket s = ss.accept();
             System.err.println("Client accepted");
             new Thread(new SocketProcessor(s)).start();
         }
+    }
+
+    private static void configureFreeMarker() throws IOException {
+        cfg.setDirectoryForTemplateLoading(new File(HttpServer.class.getResource("com/company/webFiles/templates").getPath()));
+        cfg.setDefaultEncoding("UTF-8");
+        cfg.setEncoding(new Locale("ru"), "UTF-8");
+        cfg.setOutputEncoding("windows-1251");
+        cfg.setTemplateExceptionHandler(TemplateExceptionHandler.DEBUG_HANDLER);
     }
 }

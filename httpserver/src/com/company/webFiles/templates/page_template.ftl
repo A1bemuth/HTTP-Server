@@ -1,7 +1,7 @@
 ﻿<html>
 <head>
-<title>menu</title>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Main</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
   <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body bgcolor="#FFFFFF" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
@@ -18,16 +18,21 @@
 		<td>
 			<img src="images/menu_04.jpg" width="50" height="45" alt=""></td>
 		<td class="linkCell" background="images/menu_05.jpg" width="102" height="45">
-        <a href="main.html" target="frame">First</a></td>
+        <a href="main.html">First</a></td>
 		<td class="linkCell" background="images/menu_05.jpg" width="102" height="45">
-        <a href="converter.html" target="frame">Second</a></td>
+        <a href="converter.html">Second</a></td>
 		<td class="linkCell" background="images/menu_05.jpg" width="102" height="45">
-        <a href="main.html" target="frame">Third</a></td>
+        <a href="table.html">Third</a></td>
 		<td colspan="2">
 			<img src="images/menu_08.jpg" width="544" height="45" alt=""></td>
 	</tr>
 	<tr>
-		
+		<td width="51" height="15"></td>
+		<td colspan="6" id="field">
+			${content}
+		</td>
+
+		<td width="51" height="15" colspan="2"></td>
 	</tr>
 	<tr>
 		<td>
